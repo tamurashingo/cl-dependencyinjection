@@ -1,4 +1,6 @@
 # cl-dependencyinjection - Dependency Injection macro for Common Lisp
+[![Build Status](https://travis-ci.org/tamurashingo/cl-dependencyinjection.svg?branch=develop)](https://travis-ci.org/tamurashingo/cl-dependencyinjection)
+
 
 ## Usage
 

@@ -13,7 +13,7 @@ TEST-SERVICE
 ; error occurs when call test-service at this point
 
 CL-USER> (test-service "some data")
-; Evaluation aborted on #<SIMPLE-ERROR "cannot run TEST-SERVICE service. need to define dependency" {1005756013}>.
+; Evaluation aborted on #<SIMPLE-ERROR "cannot run TEST-SERVICE. need to define dependency" {1005756013}>.
 
 ;; define dependency
 
@@ -43,7 +43,14 @@ function name, arguments.
   (:export :some-service))
 (in-package :someapp.service)
 
-(defif some-service (&rest params))
+(defif some-service (&rest params)
+  "some-service provides its service name and its parameters
+
+params
+- &rest params parameters what you want to print
+
+returns
+- nothing")
 ```
 
 #### define dependency
@@ -100,7 +107,7 @@ In test, `cl-dependencyinjection` helps you to create mock function.
                 :some-service))
 
 (defdep some-service (&rest params)
-  (format T "some mocked service")      
+  (format T "some mocked service")
   T)
 ```
 
